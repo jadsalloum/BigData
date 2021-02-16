@@ -1,0 +1,507 @@
+@prefix : <https://jads@wattUni.com/jads/coursework1#> .
+@prefix abc: <http://www.semanticweb.org/jads/ontologies/2021/0/untitled-ontology-13#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix jads: <https://jads@wattUni.com/jads/coursework1#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://jads@wattUni.com/jads/coursework1#> .
+
+<https://jads@wattUni.com/jads/coursework1#> rdf:type owl:Ontology ;
+                                              rdfs:comment "Jad Salloum Coursework1 Ontology for Watt Radio"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://jads@wattUni.com/jads/coursework1#played_by
+jads:played_by rdf:type owl:ObjectProperty ;
+               owl:inverseOf <https://jads@wattUni.com/jads/coursework1##plays> ;
+               rdfs:domain <https://jads@wattUni.com/jads/coursework1##Track> ;
+               rdfs:range <https://jads@wattUni.com/jads/coursework1##DJ> ;
+               <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+               <http://purl.org/dc/elements/1.1/date> "2021-01-31T06:15:19Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1#published_by
+jads:published_by rdf:type owl:ObjectProperty ;
+                  owl:inverseOf <https://jads@wattUni.com/jads/coursework1##Publishes> ;
+                  rdfs:domain <https://jads@wattUni.com/jads/coursework1##Album> ;
+                  rdfs:range <https://jads@wattUni.com/jads/coursework1##Artist> ;
+                  <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                  <http://purl.org/dc/elements/1.1/date> "2021-01-31T06:22:49Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1#songs_played
+jads:songs_played rdf:type owl:ObjectProperty ;
+                  rdfs:domain <https://jads@wattUni.com/jads/coursework1##Show> ;
+                  rdfs:range <https://jads@wattUni.com/jads/coursework1##Track> ;
+                  <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                  <http://purl.org/dc/elements/1.1/date> "2021-02-02T15:08:27Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1#works
+jads:works rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/date> "2021-02-02T15:31:45Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Includes
+<https://jads@wattUni.com/jads/coursework1##Includes> rdf:type owl:ObjectProperty ;
+                                                      owl:inverseOf <https://jads@wattUni.com/jads/coursework1##included_in> ;
+                                                      rdfs:domain <https://jads@wattUni.com/jads/coursework1##Album> ;
+                                                      rdfs:range <https://jads@wattUni.com/jads/coursework1##Track> ;
+                                                      <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                      <http://purl.org/dc/elements/1.1/date> "2021-01-30T12:09:37Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Publishes
+<https://jads@wattUni.com/jads/coursework1##Publishes> rdf:type owl:ObjectProperty ;
+                                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                                       rdfs:domain <https://jads@wattUni.com/jads/coursework1##Artist> ;
+                                                       rdfs:range <https://jads@wattUni.com/jads/coursework1##Album> ;
+                                                       <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                       <http://purl.org/dc/elements/1.1/date> "2021-01-30T15:34:32Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Sings
+<https://jads@wattUni.com/jads/coursework1##Sings> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                                   rdfs:domain <https://jads@wattUni.com/jads/coursework1##Artist> ;
+                                                   rdfs:range <https://jads@wattUni.com/jads/coursework1##Track> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                   <http://purl.org/dc/elements/1.1/date> "2021-01-30T12:07:30Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##contains
+<https://jads@wattUni.com/jads/coursework1##contains> rdf:type owl:ObjectProperty ;
+                                                      rdfs:domain <https://jads@wattUni.com/jads/coursework1##Dance> ,
+                                                                  <https://jads@wattUni.com/jads/coursework1##HipHop> ,
+                                                                  <https://jads@wattUni.com/jads/coursework1##POP> ;
+                                                      rdfs:range <https://jads@wattUni.com/jads/coursework1##Track> ;
+                                                      <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                      <http://purl.org/dc/elements/1.1/date> "2021-01-30T12:05:03Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##has
+<https://jads@wattUni.com/jads/coursework1##has> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain <https://jads@wattUni.com/jads/coursework1##Radio> ;
+                                                 rdfs:range <https://jads@wattUni.com/jads/coursework1##Show> ;
+                                                 <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                 <http://purl.org/dc/elements/1.1/date> "2021-01-30T12:11:20Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##has_dj
+<https://jads@wattUni.com/jads/coursework1##has_dj> rdf:type owl:ObjectProperty ;
+                                                    owl:inverseOf <https://jads@wattUni.com/jads/coursework1##plays_at> ;
+                                                    rdfs:domain <https://jads@wattUni.com/jads/coursework1##Show> ;
+                                                    rdfs:range <https://jads@wattUni.com/jads/coursework1##DJ> ;
+                                                    <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                    <http://purl.org/dc/elements/1.1/date> "2021-01-31T05:54:51Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##has_producer
+<https://jads@wattUni.com/jads/coursework1##has_producer> rdf:type owl:ObjectProperty ;
+                                                          owl:inverseOf <https://jads@wattUni.com/jads/coursework1##worksat> ;
+                                                          rdfs:domain <https://jads@wattUni.com/jads/coursework1##Show> ;
+                                                          rdfs:range <https://jads@wattUni.com/jads/coursework1##Producer> ;
+                                                          <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                          <http://purl.org/dc/elements/1.1/date> "2021-01-31T05:55:44Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##has_technician
+<https://jads@wattUni.com/jads/coursework1##has_technician> rdf:type owl:ObjectProperty ;
+                                                            owl:inverseOf <https://jads@wattUni.com/jads/coursework1##workstechnical> ;
+                                                            rdfs:domain <https://jads@wattUni.com/jads/coursework1##Show> ;
+                                                            rdfs:range <https://jads@wattUni.com/jads/coursework1##Technician> ;
+                                                            <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                            <http://purl.org/dc/elements/1.1/date> "2021-01-31T05:56:42Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##included_in
+<https://jads@wattUni.com/jads/coursework1##included_in> rdf:type owl:ObjectProperty ;
+                                                         rdfs:domain <https://jads@wattUni.com/jads/coursework1##Track> ;
+                                                         rdfs:range <https://jads@wattUni.com/jads/coursework1##Album> ;
+                                                         <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                         <http://purl.org/dc/elements/1.1/date> "2021-01-30T13:07:59Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##plays
+<https://jads@wattUni.com/jads/coursework1##plays> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                                   rdfs:domain <https://jads@wattUni.com/jads/coursework1##DJ> ;
+                                                   rdfs:range <https://jads@wattUni.com/jads/coursework1##Track> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                   <http://purl.org/dc/elements/1.1/date> "2021-01-30T12:07:57Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##plays_at
+<https://jads@wattUni.com/jads/coursework1##plays_at> rdf:type owl:ObjectProperty ;
+                                                      rdfs:subPropertyOf jads:works ;
+                                                      rdfs:domain <https://jads@wattUni.com/jads/coursework1##DJ> ;
+                                                      rdfs:range <https://jads@wattUni.com/jads/coursework1##Show> ;
+                                                      <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                      <http://purl.org/dc/elements/1.1/date> "2021-01-31T05:10:38Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##sang_by
+<https://jads@wattUni.com/jads/coursework1##sang_by> rdf:type owl:ObjectProperty ;
+                                                     rdfs:domain <https://jads@wattUni.com/jads/coursework1##Track> ;
+                                                     rdfs:range <https://jads@wattUni.com/jads/coursework1##Artist> ;
+                                                     <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                     <http://purl.org/dc/elements/1.1/date> "2021-01-30T13:11:20Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##worksat
+<https://jads@wattUni.com/jads/coursework1##worksat> rdf:type owl:ObjectProperty ;
+                                                     rdfs:subPropertyOf jads:works ;
+                                                     rdfs:domain <https://jads@wattUni.com/jads/coursework1##Producer> ;
+                                                     rdfs:range <https://jads@wattUni.com/jads/coursework1##Show> ;
+                                                     <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                     <http://purl.org/dc/elements/1.1/date> "2021-01-30T12:06:10Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##workstechnical
+<https://jads@wattUni.com/jads/coursework1##workstechnical> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf jads:works ;
+                                                            rdfs:domain <https://jads@wattUni.com/jads/coursework1##Technician> ;
+                                                            rdfs:range <https://jads@wattUni.com/jads/coursework1##Show> ;
+                                                            <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                            <http://purl.org/dc/elements/1.1/date> "2021-01-31T05:37:39Z"^^xsd:dateTime .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://jads@wattUni.com/jads/coursework1#PlayedBy
+jads:PlayedBy rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string ;
+              <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+              <http://purl.org/dc/elements/1.1/date> "2021-02-02T14:14:42Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1#TrackName
+jads:TrackName rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:range xsd:string ;
+               <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+               <http://purl.org/dc/elements/1.1/date> "2021-02-02T14:15:07Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##PlayedOn
+<https://jads@wattUni.com/jads/coursework1##PlayedOn> rdf:type owl:DatatypeProperty ;
+                                                      rdfs:subPropertyOf owl:topDataProperty ;
+                                                      rdfs:range xsd:dateTime ;
+                                                      <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                      <http://purl.org/dc/elements/1.1/date> "2021-01-30T12:17:28Z"^^xsd:dateTime .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://jads@wattUni.com/jads/coursework1##Album
+<https://jads@wattUni.com/jads/coursework1##Album> rdf:type owl:Class ;
+                                                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <https://jads@wattUni.com/jads/coursework1##contains> ;
+                                                                         owl:someValuesFrom <https://jads@wattUni.com/jads/coursework1##Track>
+                                                                       ] ;
+                                                   <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                   <http://purl.org/dc/elements/1.1/date> "2021-01-30T09:13:40Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Artist
+<https://jads@wattUni.com/jads/coursework1##Artist> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <https://jads@wattUni.com/jads/coursework1##Person> ;
+                                                    <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                    <http://purl.org/dc/elements/1.1/date> "2021-01-30T09:37:44Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##DJ
+<https://jads@wattUni.com/jads/coursework1##DJ> rdf:type owl:Class ;
+                                                rdfs:subClassOf <https://jads@wattUni.com/jads/coursework1##Person> ;
+                                                <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                <http://purl.org/dc/elements/1.1/date> "2021-01-30T08:06:00Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Dance
+<https://jads@wattUni.com/jads/coursework1##Dance> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <https://jads@wattUni.com/jads/coursework1##SongGenre> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                   <http://purl.org/dc/elements/1.1/date> "2021-01-30T09:36:39Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##HipHop
+<https://jads@wattUni.com/jads/coursework1##HipHop> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <https://jads@wattUni.com/jads/coursework1##SongGenre> ;
+                                                    <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                    <http://purl.org/dc/elements/1.1/date> "2021-01-30T09:36:52Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##POP
+<https://jads@wattUni.com/jads/coursework1##POP> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <https://jads@wattUni.com/jads/coursework1##SongGenre> ;
+                                                 <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                 <http://purl.org/dc/elements/1.1/date> "2021-01-30T09:36:30Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Person
+<https://jads@wattUni.com/jads/coursework1##Person> rdf:type owl:Class ;
+                                                    <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                    <http://purl.org/dc/elements/1.1/date> "2021-01-30T09:39:56Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Producer
+<https://jads@wattUni.com/jads/coursework1##Producer> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <https://jads@wattUni.com/jads/coursework1##Person> ;
+                                                      <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                      <http://purl.org/dc/elements/1.1/date> "2021-01-30T10:03:08Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Radio
+<https://jads@wattUni.com/jads/coursework1##Radio> rdf:type owl:Class ;
+                                                   <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                   <http://purl.org/dc/elements/1.1/date> "2021-01-30T08:05:33Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Show
+<https://jads@wattUni.com/jads/coursework1##Show> rdf:type owl:Class ;
+                                                  <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                  <http://purl.org/dc/elements/1.1/date> "2021-01-30T08:22:43Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##SongGenre
+<https://jads@wattUni.com/jads/coursework1##SongGenre> rdf:type owl:Class ;
+                                                       <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                       <http://purl.org/dc/elements/1.1/date> "2021-01-30T08:05:48Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Technician
+<https://jads@wattUni.com/jads/coursework1##Technician> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <https://jads@wattUni.com/jads/coursework1##Person> ;
+                                                        <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                        <http://purl.org/dc/elements/1.1/date> "2021-01-30T09:40:07Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Track
+<https://jads@wattUni.com/jads/coursework1##Track> rdf:type owl:Class ;
+                                                   <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                   <http://purl.org/dc/elements/1.1/date> "2021-01-30T11:58:29Z"^^xsd:dateTime .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://jads@wattUni.com/jads/coursework1##Album1
+<https://jads@wattUni.com/jads/coursework1##Album1> rdf:type owl:NamedIndividual ;
+                                                    <https://jads@wattUni.com/jads/coursework1##Includes> <https://jads@wattUni.com/jads/coursework1##Track1-1> ,
+                                                                                                          <https://jads@wattUni.com/jads/coursework1##Track1-2> ,
+                                                                                                          <https://jads@wattUni.com/jads/coursework1##Track1-3> ;
+                                                    <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                    <http://purl.org/dc/elements/1.1/date> "2021-01-30T10:29:37Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Album2
+<https://jads@wattUni.com/jads/coursework1##Album2> rdf:type owl:NamedIndividual ;
+                                                    <https://jads@wattUni.com/jads/coursework1##Includes> <https://jads@wattUni.com/jads/coursework1##Track2-1> ,
+                                                                                                          <https://jads@wattUni.com/jads/coursework1##Track2-2> ;
+                                                    <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                    <http://purl.org/dc/elements/1.1/date> "2021-01-30T10:29:42Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Album3
+<https://jads@wattUni.com/jads/coursework1##Album3> rdf:type owl:NamedIndividual ;
+                                                    <https://jads@wattUni.com/jads/coursework1##Includes> <https://jads@wattUni.com/jads/coursework1##Track3-1> ,
+                                                                                                          <https://jads@wattUni.com/jads/coursework1##Track3-2> ,
+                                                                                                          <https://jads@wattUni.com/jads/coursework1##Track3-3> ;
+                                                    <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                    <http://purl.org/dc/elements/1.1/date> "2021-01-30T10:29:49Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Artist1
+<https://jads@wattUni.com/jads/coursework1##Artist1> rdf:type owl:NamedIndividual ;
+                                                     <https://jads@wattUni.com/jads/coursework1##Publishes> <https://jads@wattUni.com/jads/coursework1##Album1> ;
+                                                     <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                     <http://purl.org/dc/elements/1.1/date> "2021-01-30T10:01:16Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Artist2
+<https://jads@wattUni.com/jads/coursework1##Artist2> rdf:type owl:NamedIndividual ;
+                                                     <https://jads@wattUni.com/jads/coursework1##Publishes> <https://jads@wattUni.com/jads/coursework1##Album2> ;
+                                                     <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                     <http://purl.org/dc/elements/1.1/date> "2021-01-30T10:01:22Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Artist3
+<https://jads@wattUni.com/jads/coursework1##Artist3> rdf:type owl:NamedIndividual ;
+                                                     <https://jads@wattUni.com/jads/coursework1##Publishes> <https://jads@wattUni.com/jads/coursework1##Album3> ;
+                                                     <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                     <http://purl.org/dc/elements/1.1/date> "2021-01-30T10:01:29Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##DJ1
+<https://jads@wattUni.com/jads/coursework1##DJ1> rdf:type owl:NamedIndividual ;
+                                                 <https://jads@wattUni.com/jads/coursework1##plays> <https://jads@wattUni.com/jads/coursework1##Track1-1> ,
+                                                                                                    <https://jads@wattUni.com/jads/coursework1##Track2-1> ;
+                                                 <https://jads@wattUni.com/jads/coursework1##plays_at> <https://jads@wattUni.com/jads/coursework1##MorningShow> ;
+                                                 <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                 <http://purl.org/dc/elements/1.1/date> "2021-01-30T08:16:54Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##DJ2
+<https://jads@wattUni.com/jads/coursework1##DJ2> rdf:type owl:NamedIndividual ;
+                                                 <https://jads@wattUni.com/jads/coursework1##plays> <https://jads@wattUni.com/jads/coursework1##Track1-2> ,
+                                                                                                    <https://jads@wattUni.com/jads/coursework1##Track2-2> ;
+                                                 <https://jads@wattUni.com/jads/coursework1##plays_at> <https://jads@wattUni.com/jads/coursework1##EveningShow> ;
+                                                 <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                 <http://purl.org/dc/elements/1.1/date> "2021-01-30T08:19:31Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##EveningShow
+<https://jads@wattUni.com/jads/coursework1##EveningShow> rdf:type owl:NamedIndividual ;
+                                                         <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                         <http://purl.org/dc/elements/1.1/date> "2021-01-30T08:43:46Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##MorningShow
+<https://jads@wattUni.com/jads/coursework1##MorningShow> rdf:type owl:NamedIndividual ;
+                                                         <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                         <http://purl.org/dc/elements/1.1/date> "2021-01-30T08:43:34Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Producer1
+<https://jads@wattUni.com/jads/coursework1##Producer1> rdf:type owl:NamedIndividual ;
+                                                       <https://jads@wattUni.com/jads/coursework1##worksat> <https://jads@wattUni.com/jads/coursework1##MorningShow> ;
+                                                       <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                       <http://purl.org/dc/elements/1.1/date> "2021-01-30T10:02:50Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Producer2
+<https://jads@wattUni.com/jads/coursework1##Producer2> rdf:type owl:NamedIndividual ;
+                                                       <https://jads@wattUni.com/jads/coursework1##worksat> <https://jads@wattUni.com/jads/coursework1##EveningShow> ;
+                                                       <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                       <http://purl.org/dc/elements/1.1/date> "2021-01-30T10:02:58Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Technician1
+<https://jads@wattUni.com/jads/coursework1##Technician1> rdf:type owl:NamedIndividual ;
+                                                         <https://jads@wattUni.com/jads/coursework1##workstechnical> <https://jads@wattUni.com/jads/coursework1##MorningShow> ;
+                                                         <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                         <http://purl.org/dc/elements/1.1/date> "2021-01-30T10:02:38Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Technician2
+<https://jads@wattUni.com/jads/coursework1##Technician2> rdf:type owl:NamedIndividual ;
+                                                         <https://jads@wattUni.com/jads/coursework1##workstechnical> <https://jads@wattUni.com/jads/coursework1##EveningShow> ;
+                                                         <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                         <http://purl.org/dc/elements/1.1/date> "2021-01-30T10:02:42Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Track1-1
+<https://jads@wattUni.com/jads/coursework1##Track1-1> rdf:type owl:NamedIndividual ,
+                                                               <https://jads@wattUni.com/jads/coursework1##HipHop> ;
+                                                      <https://jads@wattUni.com/jads/coursework1##PlayedOn> "2020-01-12T08:17:00Z"^^xsd:dateTime ,
+                                                                                                            "2020-01-14T09:11:00Z"^^xsd:dateTime ,
+                                                                                                            "2020-01-17T12:22:00Z"^^xsd:dateTime ;
+                                                      <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                      <http://purl.org/dc/elements/1.1/date> "2021-01-30T08:17:07Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Track1-2
+<https://jads@wattUni.com/jads/coursework1##Track1-2> rdf:type owl:NamedIndividual ,
+                                                               <https://jads@wattUni.com/jads/coursework1##Dance> ;
+                                                      <https://jads@wattUni.com/jads/coursework1##PlayedOn> "2020-01-15T08:11:00"^^xsd:dateTime ,
+                                                                                                            "2020-01-18T08:37:00"^^xsd:dateTime ;
+                                                      <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                      <http://purl.org/dc/elements/1.1/date> "2021-01-30T08:17:13Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Track1-3
+<https://jads@wattUni.com/jads/coursework1##Track1-3> rdf:type owl:NamedIndividual ,
+                                                               <https://jads@wattUni.com/jads/coursework1##POP> ;
+                                                      <https://jads@wattUni.com/jads/coursework1##PlayedOn> "2020-01-19T18:17:00Z"^^xsd:dateTime ;
+                                                      <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                      <http://purl.org/dc/elements/1.1/date> "2021-01-30T08:17:19Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Track2-1
+<https://jads@wattUni.com/jads/coursework1##Track2-1> rdf:type owl:NamedIndividual ,
+                                                               <https://jads@wattUni.com/jads/coursework1##HipHop> ;
+                                                      <https://jads@wattUni.com/jads/coursework1##PlayedOn> "2020-01-19T07:07:00Z"^^xsd:dateTime ,
+                                                                                                            "2020-01-20T07:07:00Z"^^xsd:dateTime ;
+                                                      <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                      <http://purl.org/dc/elements/1.1/date> "2021-01-30T08:18:14Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Track2-2
+<https://jads@wattUni.com/jads/coursework1##Track2-2> rdf:type owl:NamedIndividual ,
+                                                               <https://jads@wattUni.com/jads/coursework1##Dance> ;
+                                                      <https://jads@wattUni.com/jads/coursework1##PlayedOn> "2020-01-23T05:05:00Z"^^xsd:dateTime ,
+                                                                                                            "2020-01-27T07:09:00Z"^^xsd:dateTime ;
+                                                      <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                      <http://purl.org/dc/elements/1.1/date> "2021-01-30T08:18:21Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Track3-1
+<https://jads@wattUni.com/jads/coursework1##Track3-1> rdf:type owl:NamedIndividual ,
+                                                               <https://jads@wattUni.com/jads/coursework1##HipHop> ;
+                                                      <https://jads@wattUni.com/jads/coursework1##PlayedOn> "2020-01-24T04:04:00Z"^^xsd:dateTime ;
+                                                      <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                      <http://purl.org/dc/elements/1.1/date> "2021-01-30T08:18:27Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Track3-2
+<https://jads@wattUni.com/jads/coursework1##Track3-2> rdf:type owl:NamedIndividual ,
+                                                               <https://jads@wattUni.com/jads/coursework1##Dance> ;
+                                                      <https://jads@wattUni.com/jads/coursework1##PlayedOn> "2020-01-25T05:57:00Z"^^xsd:dateTime ;
+                                                      <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                      <http://purl.org/dc/elements/1.1/date> "2021-01-30T08:18:32Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##Track3-3
+<https://jads@wattUni.com/jads/coursework1##Track3-3> rdf:type owl:NamedIndividual ,
+                                                               <https://jads@wattUni.com/jads/coursework1##POP> ;
+                                                      <https://jads@wattUni.com/jads/coursework1##PlayedOn> "2020-01-26T07:02:00Z"^^xsd:dateTime ,
+                                                                                                            "2020-01-29T17:27:00Z"^^xsd:dateTime ;
+                                                      <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                      <http://purl.org/dc/elements/1.1/date> "2021-01-30T08:18:39Z"^^xsd:dateTime .
+
+
+###  https://jads@wattUni.com/jads/coursework1##WattRadio
+<https://jads@wattUni.com/jads/coursework1##WattRadio> rdf:type owl:NamedIndividual ,
+                                                                <https://jads@wattUni.com/jads/coursework1##Radio> ;
+                                                       <https://jads@wattUni.com/jads/coursework1##has> <https://jads@wattUni.com/jads/coursework1##EveningShow> ,
+                                                                                                        <https://jads@wattUni.com/jads/coursework1##MorningShow> ;
+                                                       <http://purl.org/dc/elements/1.1/creator> "jads"^^xsd:string ;
+                                                       <http://purl.org/dc/elements/1.1/date> "2021-01-30T08:16:19Z"^^xsd:dateTime .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <https://jads@wattUni.com/jads/coursework1##DJ>
+                <https://jads@wattUni.com/jads/coursework1##Producer>
+                <https://jads@wattUni.com/jads/coursework1##Technician>
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
